@@ -1,0 +1,167 @@
+﻿<br />
+    <a href="#" class="btn btn-default">Gastos anuales</a>
+    <a href="#" class="btn btn-info">Horas trabajadas año</a>
+    <a href="#" class="btn btn-info">Cuánto gano</a>
+    <a href="#" class="btn btn-info">Cuánto debo cobrar</a>
+    <a href="#" class="btn btn-info">cuánto debo trabajar</a>
+<h1>
+    CONSULTAS DE GASTOS
+</h1>
+
+
+<h4>Hola, {{vm.getLoginUsuario()}}</h4>
+
+    <!--CONTENEDOR-->
+    <div class="container ">
+
+    <table class="table table-striped">
+        <caption>Gastos</caption>
+        <thead>
+            <tr>
+                <th><a href="#/gasto/0" class="btn btn-info">Añadir</a></th>
+                <th>Gasto ID</th>
+                <th>Compra<br>de<br> Hardware</th>
+                <th>HardwareY</th>
+                <th>Software</th>
+                <th>SoftwareY</th>
+                <th>MaterialConsultaAlta</th>
+                <th>MaterialConsultaAltaY</th>
+                <th>InstalTelefonoInternet</th>
+                <th>InstalTelefonoInternetY</th>
+                <th>AlquilerOficina</th>
+                <th>AlquilerOficinaY</th>
+                <th>MobiliarioOficina</th>
+                <th>MobiliarioOficinaY</th>
+                <th>ImagenProfesional</th>
+                <th>ImagenProfesionalY</th>
+                <th>GastosEstablVarios</th>
+                <th>GastosEstablVariosY</th>
+
+                <th>MaterialConsultaRenov</th>
+                <th>MaterialConsultaRenovY</th>
+                <th>HardwareRenov</th>
+                <th>HardwareRenovY</th>
+                <th>SoftwareRenov</th>
+                <th>SoftwareRenovY</th>
+                <th>Afiliaciones</th>
+                <th>AfiliacionesY</th>
+                <th>Proteccion</th>
+                <th>ProteccionY</th>
+                <th>DominioInternet</th>
+                <th>DominioInternetY</th>
+                <th>MaterialFungible</th>
+                <th>MaterialFungibleY</th>
+                <th>Formacion</th>
+                <th>FormacionY</th>
+                <th>Publicidad</th>
+                <th>PublicidadY</th>
+                <th>Imprevistos</th>
+                <th>ImprevistosY</th>
+                <th>PRL</th>
+                <th>PRLY</th>
+                <th>GastosAnualesVarios</th>
+                <th>GastosAnualesVariosY</th>
+                <th>AlquilerOficinaMensual</th>
+                <th>AlquilerOficinaMensualY</th>
+                <th>SeguridadSocial</th>
+                <th>SeguridadSocialY</th>
+                <th>SeguroMedico</th>
+                <th>SeguroMedicoY</th>
+                <th>LuzCalefaccion</th>
+                <th>LuzCalefaccionY</th>
+                <th>GestoriaLitigios</th>
+                <th>GestoriaLitigiosY</th>
+                <th>AsesoriaAveriasInf</th>
+                <th>AsesoriaAveriasInfY</th>
+                <th>AlojamientoWeb</th>
+                <th>AlojamientoWebY</th>
+                <th>TelefonoInternetMensual</th>
+                <th>TelefonoInternetMensualY</th>
+                <th>GastosMensualesVarios</th>
+                <th>GastosMensualesVariosY</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="form-online" ng-repeat="gas in vm.gastos |filter:buscador">
+                <td><a href="#/gasto/{{gas.GastosID}}" class="btn btn-success">ver</a></td>
+
+                <td><span>{{gas.GastosID}}</span></td>
+                <td><span>{{gas.Hardware | currency}}</span></td>
+                <td><span>{{gas.HardwareY}}</span></td>
+                <td><span>{{gas.Software | currency}}</span></td>
+                <td><span>{{gas.SoftwareY}}</span></td>
+                <td><span>{{gas.MaterialConsultaAlta}}</span></td>
+                <td><span>{{gas.MaterialConsultaAltaY}}</span></td>
+                <td><span>{{gas.InstalTelefonoInternet}}</span></td>
+                <td><span>{{gas.InstalTelefonoInternetY}}</span></td>
+                <td><span>{{gas.AlquilerOficina}}</span></td>
+                <td><span>{{gas.AlquilerOficinaY}}</span></td>
+                <td><span>{{gas.MobiliarioOficina}}</span></td>
+                <td><span>{{gas.MobiliarioOficinaY}}</span></td>
+                <td><span>{{gas.ImagenProfesional}}</span></td>
+                <td><span>{{gas.ImagenProfesionalY}}</span></td>
+                <td><span>{{gas.GastosEstablVarios}}</span></td>
+                <td><span>{{gas.GastosEstablVariosY}}</span></td>
+                <!--Gastos anuales-->
+                <td><span>{{gas.MaterialConsultaRenov}}</span></td>
+                <td><span>{{gas.MaterialConsultaRenovY}}</span></td>
+                <td><span>{{gas.HardwareRenov}}</span></td>
+                <td><span>{{gas.HardwareRenovY}}</span></td>
+                <td><span>{{gas.SoftwareRenov}}</span></td>
+                <td><span>{{gas.SoftwareRenovY}}</span></td>
+                <td><span>{{gas.Afiliaciones}}</span></td>
+                <td><span>{{gas.AfiliacionesY}}</span></td>
+                <td><span>{{gas.Proteccion}}</span></td>
+                <td><span>{{gas.ProteccionY}}</span></td>
+                <td><span>{{gas.DominioInternet}}</span></td>
+                <td><span>{{gas.DominioInternetY}}</span></td>
+                <td><span>{{gas.MaterialFungible}}</span></td>
+                <td><span>{{gas.MaterialFungibleY}}</span></td>
+                <td><span>{{gas.Formacion}}</span></td>
+                <td><span>{{gas.FormacionY}}</span></td>
+                <td><span>{{gas.Publicidad}}</span></td>
+                <td><span>{{gas.PublicidadY}}</span></td>
+                <td><span>{{gas.Imprevistos}}</span></td>
+                <td><span>{{gas.ImprevistosY}}</span></td>
+                <td><span>{{gas.PRL}}</span></td>
+                <td><span>{{gas.PRLY}}</span></td>
+                <td><span>{{gas.GastosAnualesVarios}}</span></td>
+                <td><span>{{gas.GastosAnualesVariosY}}</span></td>
+                <!--Gastos mensuales-->
+                <td><span>{{gas.AlquilerOficinaMensual}}</span></td>
+                <td><span>{{gas.AlquilerOficinaMensualY}}</span></td>
+                <td><span>{{gas.SeguridadSocial}}</span></td>
+                <td><span>{{gas.SeguridadSocialY}}</span></td>
+                <td><span>{{gas.SeguroMedico}}</span></td>
+                <td><span>{{gas.SeguroMedicoY}}</span></td>
+                <td><span>{{gas.LuzCalefaccion}}</span></td>
+                <td><span>{{gas.LuzCalefaccionY}}</span></td>
+                <td><span>{{gas.GestoriaLitigios}}</span></td>
+                <td><span>{{gas.GestoriaLitigiosY}}</span></td>
+                <td><span>{{gas.AsesoriaAveriasInf}}</span></td>
+                <td><span>{{gas.AsesoriaAveriasInfY}}</span></td>
+                <td><span>{{gas.AlojamientoWeb}}</span></td>
+                <td><span>{{gas.AlojamientoWebY}}</span></td>
+                <td><span>{{gas.TelefonoInternetMensual}}</span></td>
+                <td><span>{{gas.TelefonoInternetMensualY}}</span></td>
+                <td><span>{{gas.GastosMensualesVarios}}</span></td>
+                <td><span>{{gas.GastosMensualesVariosY}}</span></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="large-12 columns">
+        <label>Filtra tu búsqueda: </label>
+        <input type="text" ng-model="buscador" />
+    </div>
+    <pre>
+{{vm.getLoginUsuario()}}
+</pre>
+</div>
+<!--FIN CONTENEDOR-->
+    </div>
+    <!--FIN CONTENEDOR-->
+
+

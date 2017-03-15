@@ -1,0 +1,61 @@
+﻿<div ng-include="submenu"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <h1><i class="fa fa-money"></i> {{vm.titulo}}</h1>
+            <hr>
+        </div>
+    </div>
+
+    <form>
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <tr >
+                        <td class="col-md-4" colspan="4"><h4>Consulta número: {{vm.cuantogano.cuantoganoID}} </h4> </td>
+                    </tr>
+                    <tr><td colspan="4"></td></tr>
+
+                    <tr><td></td></tr>
+
+                    <tr class="bg-primary">
+                        <td>Concepto</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Rendimiento</td>
+                        <td><input type="number" step="any" name="rendimiento" class="form-control text-left" ng-model="vm.cuantogano.Rendimiento" /></td>
+                    </tr>
+                    <tr>
+                        <td>Precio por palabra</td>
+                        <td><input type="number" step="any" name="precio" class="form-control text-left" ng-model="vm.cuantogano.PrecioPalabra" /></td>
+                    </tr>
+                    <tr>
+                        <td>Pagas al año</td>
+                        <td><input type="number" step="any" name="pagas" class="form-control text-left" ng-model="vm.cuantogano.PagasAnual" /></td>
+                    </tr>
+                    <tr>
+                        <td>% IRPF</td>
+                        <td><input type="number" step="any" name="irpf" class="form-control text-left" ng-model="vm.cuantogano.IRPF" /></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+
+            <!--BOTÓN-->
+            <div class="col-md-4 col-sm-4 col-xs-2">
+                <button type="submit" class="btn btn-primary" ng-click="vm.enviar(cuantogano)">Guardar cambios</button>
+
+                <br />
+                <br />
+            </div>
+        </div>
+    </form>
+</div>
+
+
+       

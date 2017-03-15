@@ -1,0 +1,132 @@
+﻿
+<h1>
+    <i class="fa fa-shopping-cart"></i> CONSULTAS DE COMPRAS
+</h1>
+<br />
+
+
+<!--<h4>Hola, {{vm.getLoginUsuario()}}</h4>-->
+<!--CONTENEDOR-->
+<div class="container ">
+
+    <table class="table table-striped">
+        
+        <!--CABECERA-->
+        <thead>
+            <tr class="bg-primary">
+                <th><a href="#/compra/0" class="btn btn-info"><i class="fa fa-plus"></i></a></th>
+                <th>ID compra</th>
+
+                <th ng-click="vm.sort('vm.Ejercicio')">
+                    Ejecicio
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='Ejercicio'"
+                          ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}">
+                    </span>
+                </th>
+
+                <th ng-click="vm.sort('vm.Trimestre')">
+                    Trimestre
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='Trimestre'"
+                          ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}">
+                    </span>
+                </th>
+
+                <th ng-click="vm.sort('vm.RazonSocial')">
+                    Razón Social
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='RazonSocial'"
+                          ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}">
+                    </span>
+                </th>
+
+                <th>Num. Factura</th>
+
+                <th ng-click="vm.sort('vm.Concepto')">
+                    Concepto
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='Concepto'"
+                          ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}">
+                    </span>
+                </th>                
+                
+                <th ng-click="vm.sort('vm.Fecha')">
+                    Fecha
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='Fecha'"
+                          ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}">
+                    </span>
+                </th>
+
+                <th>base factura</th>
+                <th>Tipo IVA</th>
+                <th>amortización</th>
+                <th>Total IVA</th>
+                <th>Total factura</th>
+            </tr>
+        </thead>
+
+        <!-- FILTROS -->
+            <thead>
+                <tr class="bg-info">
+                    <th>Filtros</th>
+                    <th></th>
+                    <th><input type="text" ng-model="search.ejercicio" class="col-xs-6 col-sm-6 col-md-6" /></th>
+                    <th><input type="text" ng-model="search.trimestre" class="col-xs-6 col-sm-6 col-md-6" /></th>
+                    <th><input type="text" ng-model="search.razonsocial"  class="col-xs-6 col-sm-6 col-md-6"/></th>
+                    <th></th>
+                    <th><input type="text" ng-model="search.concepto"  class="col-xs-6 col-sm-6 col-md-6"/></th>
+                    <th><input type="text" ng-model="search.fecha"  class="col-xs-6 col-sm-6 col-md-6" /></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+        <!--CUERPO-->
+        <tbody>
+            <tr class="form-online" dir-paginate="com in vm.comprasvTodas |
+                orderBy:vm.sortkey:vm.reverse | 
+                filter:{
+                Ejercicio:search.ejercicio,
+                Trimestre:search.trimestre,
+                RazonSocial:search.razonsocial, 
+                Concepto:search.concepto, 
+                Fecha:search.fecha} | 
+                itemsPerPage:5">
+                <td><a href="#/compra/{{com.IDCompras}}" class="btn btn-success"><i class="fa fa-pencil"></i></a></td>
+
+                <td><span>{{com.IDCompras}}</span></td>
+                <td><span>{{com.Ejercicio}}</span></td>
+                <td><span>{{com.Trimestre}}</span></td>
+                <td><span>{{com.RazonSocial}}</span></td>
+                <td><span>{{com.NumFactura}}</span></td>
+                <td><span>{{com.Concepto}}</span></td>
+                <td><span>{{com.Fecha}}</span></td>
+                <td><span>{{com.BaseFactura}}</span></td>
+                <td><span>{{com.TipoIva}}</span></td>
+                <td><span>{{com.Amortizacion}}</span></td>
+                <td><span>{{com.TotalIVA}}</span></td>
+                <td><span>{{com.TotalFactura}}</span></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="text-right">
+        <!-- BOTONES PARA PASAR PÁGINA -->
+        <dir-pagination-controls max-size="10"
+                                 direction-links="true"
+                                 boundary-links="true">
+        </dir-pagination-controls>
+    </div>
+
+
+
+
+    <!--<pre>
+    {{vm.getLoginUsuario()}}
+    </pre>-->
+</div>
+<!--FIN CONTENEDOR-->
+    
+<!--FIN CONTENEDOR-->

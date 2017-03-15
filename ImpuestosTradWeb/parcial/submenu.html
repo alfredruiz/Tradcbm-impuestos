@@ -1,0 +1,46 @@
+﻿<!--<nav class="navbar navbar-default" ng-controller="menuCtrl as vm">
+    <!--<div class="container">-->
+        <!--<div id="navbar" class="navbar-collapse collapse">-->
+            <!--<ul class="nav navbar-nav">
+                <li ng-class="mGasto"><a type="button" class="btn btn-default" href="#/gasto/{{vm.parametroUrl}}">Gastos anuales</a></li>
+                <li ng-class="mHoras"><a type="button" class="btn btn-default" href="#/horastrabajadas/{{vm.parametroUrl}}">Horas trabajadas al año</a></li>
+                <li ng-class="mGano"><a type="button" class="btn btn-default" href="#/cuantogano/{{vm.parametroUrl}}">Cuánto gano</a></li>-->
+                <!--<li ng-class="mCobrar"><a type="button" class="btn btn-default" href="#/consultas">Cuánto debo trabajar</a></li>
+                <li ng-class="mTrabajar"><a type="button" class="btn btn-default" href="#/consultas">Cuánto debo trabajar</a></li>-->
+            </ul>            
+        <!--</div>-->
+    <!--</div>
+</nav>-->
+
+<nav class="navbar navbar-default " ng-controller="menuCtrl as vm">
+    <div class="container" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--<a class="navbar-brand" href="#/consultas">Listado de Consultas</a>-->
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" ng-class="{'in':!navCollapsed}">
+            <ul class="nav navbar-nav">
+                <li ng-class="mGasto"><a type="button" class="btn btn-default" href="#/consultas" ng-show="vm.VerBotonConsultas()" ><strong>Ver listado consultas</strong></a></li>
+                <li ng-class="mGasto"><a type="button" class="btn btn-default" href="#/gasto/{{vm.parametroUrl}}">Gastos anuales</a></li>
+                <li ng-class="mHoras"><a type="button" class="btn btn-default" href="#/horastrabajadas/{{vm.parametroUrl}}">Horas trabajadas al año</a></li>
+                <li ng-class="mGano"><a type="button" class="btn btn-default" href="#/cuantogano/{{vm.parametroUrl}}">Cuánto gano</a></li>
+                <!--<li ng-class="mCobrar"><a type="button" class="btn btn-default" href="#/consultas">Cuánto debo trabajar</a></li>
+                <li ng-class="mTrabajar"><a type="button" class="btn btn-default" href="#/consultas">Cuánto debo trabajar</a></li>-->
+
+            </ul>
+            
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+

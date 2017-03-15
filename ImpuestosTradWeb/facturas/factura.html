@@ -1,0 +1,93 @@
+﻿
+
+<script>
+    var date = $('#datepicker').datepicker({ dateFormat: 'yyyy-mm-dd' }).val();
+</script>
+
+<div ng-include="submenu"></div>
+
+    <div class="row"  >
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <h1 ><i class="fa fa-eur"></i> {{vm.titulo}}</h1>
+                <hr>
+            </div>
+        </div>
+        <form>
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <table  class="table table-striped" >
+                        <tr>
+                            <td class="col-md-3" colspan="2"><h4>ID Factura: {{vm.factura.IDFacturaProv}} </h4> </td>
+                        </tr>
+                        <!--<tr><td colspan="4"></td></tr>
+                        <tr class="danger">
+                            <td colspan="4"><B>RELACIÓN DE FACTURAS</B></td>
+                        </tr>
+                        <tr><td colspan="4"></td></tr>
+                        <tr><td></td></tr>
+                        <tr><td colspan="4"></td></tr>-->
+                        <tr >
+                            <td>Núm. Factura</td>
+                            <td><input  class="form-control text-left" ng-model="vm.factura.NumFactura" /></td>
+                        </tr>
+                        <tr >
+                            <td>cód. Cliente</td>
+                            <td><input  class="form-control text-left" ng-model="vm.factura.CodCliente" /></td>
+                        </tr>
+
+                        <tr >
+                            <td>Ámbito</td>
+                            <td><input  class="form-control text-left" ng-model="vm.factura.Ambito" /></td>
+                        </tr>
+                        <tr>
+                            <td ng-init="vm.Mostrar()" ng-show="vm.VerModificar" >Fecha</td>
+                            <td ng-init="vm.Mostrar()" ng-show="vm.VerModificar" ><input class="form-control text-left" 
+                                                        ng-click="vm.VerModificar = false; vm.VerAnadir = true; vm.factura.Fecha = ''" ng-model="vm.factura.Fecha" />
+                          
+                        </tr>
+                        <tr >
+                            <td ng-init="vm.Mostrar()" ng-show="vm.VerAnadir" >Fecha</td>
+                            <td ng-init="vm.Mostrar()" ng-show="vm.VerAnadir" ><input   class="form-control text-left"  
+                                                        ng-model="vm.factura.Fecha" /></td>
+                        </tr>
+                        <tr >
+                            <td>Base Factura</td>
+                            <td><input type="number" step="any"  class="form-control text-left" ng-model="vm.factura.Base" /></td>
+                        </tr>
+                        <tr >
+                            <td>Dto. Factura</td>
+                            <td><input type="number" step="any"  class="form-control text-left" ng-model="vm.factura.Descuento" /></td>
+                        </tr>
+                        <tr >
+                            <td>Tipo de IVA</td>
+                            <td><input type="number" step="any"  class="form-control text-left" ng-model="vm.factura.TipoIVA" /></td>
+                        </tr>
+                        <tr>
+                            <td>Tipo de IRPF</td>
+                            <td><input type="number" step="any" class="form-control text-left" ng-model="vm.factura.TipoIRPF" /></td>
+                        </tr>
+                        </table>
+                    <table>
+                        
+                        <!--BOTÓN ENVIAR-->
+                        <tr>
+                            <td ng-init="vm.MostrarBtn()" ng-show="vm.VerBtnAnadir"><button type="submit" class="btn btn-success" ng-click="vm.anadir(vm.factura);vm.factura = ''"><i class="fa fa-floppy-o"> Guardar</button></td>
+                            <td ><button type="submit" class="btn btn-primary" ng-click="vm.enviar(vm.factura)"><i class="fa fa-floppy-o"></i> Guardar y volver</button></td>
+                            <td><button type="submit" class="btn btn-danger" ng-click="vm.EliminarFactura(vm.factura.IDFacturaProv)"><i class="fa fa-trash"></i> Eliminar</button></td> 
+                            <td><button type="submit" class="btn btn-warning" ng-click="vm.cancelar()"><i class="fa fa-ban"></i> Cancelar</button></td>
+
+                        
+                        </tr>
+                       
+                    </table>
+                    <!--<pre>
+                        {{vm.factura}}
+                    </pre>-->
+                </div>
+            </div>
+        </form>
+    </div>
+
+       
+

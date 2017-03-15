@@ -1,0 +1,57 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <h1>{{vm.titulo}}</h1>
+
+        </div>
+    </div>
+
+    <form>
+        <div class="col-md-12">
+            <div class="col-md-9">
+                <table class="table table-striped col-md-12">
+
+                    <tr><td colspan="2"></td></tr>
+
+                    <tr class="danger">
+                        <td colspan="2"><B>PERFIL DE USUARI@</B></td>
+                    </tr>
+
+                    <tr><td></td></tr>
+
+                    <tr><td colspan="2"></td></tr>
+  
+                    <tr>
+                        <td class="col-md-1">Nombre de usuario</td>
+                        <td class="col-md-8"><input type="text" name="software" class="form-control text-left" ng-model="vm.usuario.NombreUsuario" /></td>
+                    </tr>
+                    <tr >
+                        <td class="col-md-2">Correo electrónico</td>
+                        <td class="col-md-2"><input type="text" name="software" class="form-control text-left" ng-model="vm.usuario.CorreoElectronico" /></td>
+                    </tr>
+
+                    <tr >
+                        <td class="col-md-2">Contraseña</td>
+                        <td class="col-md-2"><input type="text" name="MaterialConsultaAlta" class="form-control text-left" ng-model="vm.usuario.Contrasena" /></td>
+                    </tr>
+                    
+                    <!--BOTÓN ENVIAR-->
+                    <tr>
+                        <td colspan="2"><button type="submit" class="btn btn-primary" ng-click="vm.GuardarUsuario(vm.usuario)">Guardar cambios</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button type="submit" class="btn btn-danger" ng-click="vm.EliminarUsuario(vm.usuario)">Baja de usuario</button></td>
+                    </tr>
+
+                    <tr><td colspan="2"><hr /></td></tr>
+                  
+                </table>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
+
+

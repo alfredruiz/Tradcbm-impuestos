@@ -1,0 +1,53 @@
+﻿<div class="container ">
+    <div class="col-md-6">
+        <div class="jumbotron">
+            <h1>CalPro 2.0</h1>
+            <br /><br />
+            <p class="lead">Gestión financiera y del rendimiento profesional de la traducción y la interpretación.</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-sm-3 col-md-2"></div>
+            <div class="col-xs-10 col-sm-6 col-md-8"></div>
+        </div>
+    </div>
+    
+    <div class="login-box-body col-md-6" ng-controller="LoginUsuarioCtrl as vm">
+        <br />
+        <!--<p class="login-box-msg">Identifiquese</p>-->
+        <form name="formulario"
+              ng-submit="vm.ingresar(datos)"
+              novalidate="novalidate">
+
+            <div class="form-group has-feedback">
+                <label for="email" class="control-label">Correo Electrónico</label> <!-- control-label para que se marque el campo-->
+                <input type="text" id="email" class="form-control" name="email" ng-model="datos.correoElectronico" required="required">
+                <!-- el ng-minlength hace referencia al mínimo de caracteres a poner en el formulario-->
+            </div>
+
+            <div class="form-group has-feedback">
+                <label for="contrasena" class="control-label">Contraseña</label>
+                <input type="password" id="contrasena" class="form-control" name="contrasena" ng-model="datos.contrasena" required="required">
+            </div>
+
+            <!--Botón enviar usuario identificado-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block btn-flat">Identifíquese</button>
+                </div>
+            </div>
+            <h4 class="text-danger text-center">{{vm.mensajeError}}</h4>
+        </form>
+        <!--Botones enviar usuario anonimo y registrase-->
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-default btn-lg btn-block btn-flat" ng-click="vm.ingresarAnonimo();vm.AnadirConsultaAnonima(consulta);vm.RecargarVista()">Entrar sin identificarse</button>
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <a type="button" href="#/usuario" class="btn btn-info btn-lg btn-block btn-flat">Regístrese</a>
+</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html ng-app="ImpuestosTrad" ng-controller="inicioCtrl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+    <title>Trad Impuestos 1.0</title>
+    <link rel="stylesheet" href="css/style.css">
+
+   
+    <!-- Incluir Bootstrap y font-awesome-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Incluir AngularJS -->
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.2.19/i18n/angular-locale_es-es.js"></script> <!--Internacionalización, idioma español-->
+   
+    <script src="js/lib/dirPagination.js"></script>
+
+     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-datatables/0.5.6/angular-datatables.min.js"></script>-->
+    <!--<script src="js/lib/angular-datatables.js"></script>-->
+
+   
+
+    <!--jquery y datapicker-->
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <!--<script src="js/lib/jquery.dataTables.min.js"></script>-->
+    <!--<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>-->
+
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+
+    <!--<script src="js/lib/jcs-auto-validate.js"></script>-->
+    <!--<link href="js/lib/ui-bootstrap-csp.css" rel="stylesheet" />-->
+
+    <script src="js/lib/ui-bootstrap-tpls-0.12.0.min.js"></script>
+
+   
+
+    <!-- Librerias propias para angular -->
+    <script src="js/app.js"></script>
+    <!--<script src="js/appNav.js"></script>-->
+
+    <!--controladores-->
+    <script src="js/config.js"></script>
+    <script src="js/inicioCtrl.js"></script>
+    <script src="js/compraCtrl.js"></script>
+    <script src="js/comprasCtrl.js"></script>
+    <script src="js/comprasvCtrl.js"></script>
+    <script src="js/facturaCtrl.js"></script>
+    <script src="js/facturasCtrl.js"></script>
+    <script src="js/facturasvCtrl.js"></script>
+    <script src="js/gastoCtrl.js"></script>
+    <script src="js/gastosCtrl.js"></script>
+    <script src="js/irpfListadoCtrl.js"></script>
+    <script src="js/irpfVistaCtrl.js"></script>
+    <!--<script src="js/cuantoganoallCtrl.js"></script>-->
+    <script src="js/cuantoganoCtrl.js"></script>
+    <script src="js/usuariosCtrl.js"></script>
+    <script src="js/sesionCtrl.js"></script>
+    <script src="js/consultasCtrl.js"></script>
+    <script src="js/menuCtrl.js"></script>
+    <script src="js/horastrabajadasCtrl.js"></script>
+
+
+
+
+
+
+
+</head>
+
+<body class="cuerpo">
+
+    <!--MENÚ-->
+    <div ng-include="menuSuperior"></div>
+    <!--FIN  MENÚ-->
+    <!--CONTENIDO-->
+    <div class="container ">
+        <div ng-view></div>
+    </div>
+    <!--FIN CONTENIDO-->
+
+
+</body>
+</html>
+<footer>
+    <!--<div class="container body-content">
+        <hr />
+        <p>2016 - <a href="http://www.innovars.es" target="_blank"> innovars.es</a></p>
+    </div>-->
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>2016 - <a href="http://www.innovars.es" target="_blank" class="sincolor"> INNOVARS.ES</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

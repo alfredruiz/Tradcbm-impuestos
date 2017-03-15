@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html ng-app="Cal2Pro" >
+    <head>
+        <meta charset="utf-8">
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+        <title>GASTO</title>
+
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+        <!-- Incluir AngularJS -->
+        <script src="../js/lib/angular.min.js"></script>
+        <script src="../js/lib/angular-route.min.js"></script>
+        <script src="../js/lib/jcs-auto-validate.js"></script>
+
+        <!-- Librerias propias para angular -->
+        <script src="../js/app.js"></script>
+    </head>    
+    <body>
+        
+        <div class="container">
+
+
+        <h1>VER UN GASTO</h1>
+            <h4> gasto numero... {{mensaje}}</h4>
+        <hr>
+
+        <div class="login-box-body" ng-controller="gastoCtrl as vm">
+               <p class="login-box-msg">Qué gasto quiere ver</p>
+                <form name="formulario" 
+                    ng-submit="vm.verGasto(datos)"
+                    novalidate="novalidate">
+                
+                    <div class="form-group has-feedback">
+                        <label for="text" class="control-label">id gasto</label> <!-- control-label para que se marque el campo-->
+                        <input  type="text" 
+                                id="gastoID" 
+                                class="form-control"
+                                name="gastoID"
+                                ng-model="datos.gastoID"
+                                required="required"> <!-- el ng-minlength hace referencia al mínimo de caracteres a poner en el formulario-->
+                    </div>
+
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="submit" 
+                                    class="btn btn-primary btn-block btn-flat">
+
+                                    mostrar
+                            </button> 
+                        </div>    
+                                              
+                    </div>
+
+                    
+                </form>    
+                <pre>
+                    1{{datos}}
+                    2{{vm.gastos}}
+                    3{{gastos}}
+
+                </pre>
+
+
+        </div>
+
+            
+
+        </div>
+        
+    </body>
+</html>

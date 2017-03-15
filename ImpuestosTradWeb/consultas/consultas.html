@@ -1,0 +1,41 @@
+﻿
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <h1><i class="fa fa-list"></i> Listado de consultas</h1>
+            <hr>
+        </div>
+    </div>
+    <form>
+        <div class="col-md-12">
+            <div class="col-md-12">
+
+                <table class="table table-striped col-md-12">
+                    <tr>
+                    </tr>
+                    <tr class="col-md-10 col-xs-10">
+                        <!--<td colspan="2" ></td>-->
+                        <td class="col-md-1 col-xs-1"><button ng-click="vm.AnadirConsultaVerUltima(consulta)" class="btn btn-success"><i class="fa fa-plus fa-lg"></i></button></td>
+                        <td class="col-md-1 col-xs-1"></td>
+                        <td class="col-md-2 col-xs-2" align="center">ID</td>
+                        <td class="col-md-7 col-xs-7">Fecha de entrada</td>
+
+                    </tr>
+                    <tbody>
+                        <!--<tr><td><hr /></td></tr>-->
+
+                        <tr class="form-online col-md-10" ng-repeat="comp2 in vm.consultaCompleta | filter: vm.usuario ">
+                            <td class="col-md-1 col-xs-1"><a href="#/gasto/{{comp2.ConsultaID}}" class="btn btn-info"><i class="fa fa-pencil fa-lg"></i></a></td>
+                            <td class="col-md-1 col-xs-1"><a href="#/consultas" ng-click=" vm.EliminarConsulta(comp2.ConsultaID);vm.VerConsultaTimeOut();" class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i></a></td>
+                            <td class="col-md-2 col-xs-2" align="center"><span>{{comp2.ConsultaID}}</span></td>
+                            <td class="col-md-7 col-xs-7"><span>{{comp2.FechaEntrada }}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+
+

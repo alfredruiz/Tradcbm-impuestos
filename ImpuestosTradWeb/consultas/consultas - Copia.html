@@ -1,0 +1,93 @@
+﻿
+
+<!--<h4>Hola, {{vm.getLoginUsuario()}}</h4>-->
+
+
+<!--CONTENEDOR-->
+<div class="container ">
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr><td colspan="15"><h1><i class="fa fa-list"></i> LISTADO DE CONSULTAS</h1></td></tr>
+            <tr><td colspan="18"><hr /></td></tr>
+            <!--<tr>
+                <td colspan="5"><button ng-click="vm.AnadirConsultaVerUltima(consulta)" class="btn btn-success"><i class="fa fa-plus-square"></i> Crear nueva consulta</button></td>
+            </tr>-->
+            <tr>
+                <!--<td><button ng-click="vm.AnadirConsulta(consulta);vm.RecargarVista();vm.ObtenerUltimaConsulta()" class="btn btn-info"><i class="fa fa-plus-square"></i> Completo</button></td>-->
+                <!--<td><button ng-click="vm.AnadirConsulta(consulta);vm.RecargarVista()" class="btn btn-info"><i class="fa fa-plus-square"></i> Crear</button></td>-->
+                <!--<td><button ng-click="vm.ObtenerUltimaConsulta()" class="btn btn-danger"><i class="fa fa-pencil fa-lg"></i> Editar</button></td>-->
+                <td><button ng-click="vm.AnadirConsultaVerUltima(consulta)" class="btn btn-success"><i class="fa fa-plus fa-lg"></i></button></td>
+                <td></td>
+                <td colspan="5"><h4>Consulta</h4></td>
+                <td colspan="5"><h4>Gastos anuales</h4></td>
+                <td colspan="5"><h4>Cuánto gano</h4></td>
+                <td colspan="5"><h4>Horas trabajadas</h4></td>
+
+            </tr>
+            <tr>
+                <!--<th><a href="#/gasto/0" class="btn btn-info"><i class="fa fa-plus-square"></i></a></th>-->
+                <th></th>
+                <th></th>
+                <th>ID</th>
+                <th>Fecha de entrada</th>
+
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+
+                <th>Hardware</th>
+                <th>Software</th>
+
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+
+                <th>Rendimiento</th>
+                <th>Precio por palabra</th>
+
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+
+                <th>Días de trabajo por semana</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><hr /></td></tr>
+
+            <tr class="form-online" ng-repeat="comp2 in vm.consultaCompleta | filter: vm.usuario ">
+                <td><a href="#/gasto/{{comp2.ConsultaID}}" class="btn btn-info"><i class="fa fa-pencil fa-lg"></i></a></td>
+                <td><a href="#/consultas"  ng-click=" vm.EliminarConsulta(comp2.ConsultaID);vm.VerConsultaTimeOut();" class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i></a></td>
+                <td><span>{{comp2.ConsultaID}}</span></td>
+                <td><span>{{comp2.FechaEntrada | datetime | date:'yyyy-MM-dd HH:MM:ss'}}</span></td>
+                
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+
+                <td bgcolor="#ffffff"><a href="#/gasto/{{comp2.GastosID}}" class="btn btn-default"><i class="fa fa-pencil fa-lg"></i></a></td>
+                <td><span>{{comp2.Hardware}}</span></td>
+                <td><span>{{comp2.Software}}</span></td>
+                
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+
+                <td bgcolor="#ffffff"><a href="#/cuantogano/{{comp2.cuantoganoID}}" class="btn btn-default"><i class="fa fa-pencil fa-lg"></i></a></td>
+                <td><span>{{comp2.Rendimiento}}</span></td>
+                <td><span>{{comp2.PrecioPalabra}}</span></td>
+
+                <td bgcolor="#ffffff"></td>
+                <td bgcolor="#ffffff"></td>
+
+                <td bgcolor="#ffffff"><a href="#/cuantogano/{{comp2.horastrabajadasID}}" class="btn btn-default"><i class="fa fa-pencil fa-lg"></i></a></td>
+                <td><span>{{comp2.DiasTrabajoSemana}}</span></td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+

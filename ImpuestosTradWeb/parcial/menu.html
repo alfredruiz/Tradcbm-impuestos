@@ -1,0 +1,42 @@
+﻿
+<nav class="navbar navbar-inverse navbar-static-top" ng-controller="menuCtrl as vm">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"  ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">Facturas</span>
+                <span class="icon-bar">Compras</span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">TRAD IMPUESTOS 1.0</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" ng-class="{'in':!navCollapsed}">
+            <ul class="nav navbar-nav">
+
+                <!--<li ng-class="mUsuarios"><a href="#/usuario/{{globales.loginUsuario.UsuarioID}}" ng-hide="vm.Bienvenida === ''">Perfil de usuario</a></li>-->
+                <!--<li ng-class="mFacturas"><a href="#/facturas" ng-hide="vm.Bienvenida === ''">Facturas</a></li>-->
+                <li ng-class="mFacturasv"><a href="#/facturas" ng-hide="vm.Bienvenida === ''">Facturas</a></li>
+                <li ng-class="mFacturasv"><a href="#/facturacompleta" ng-hide="vm.Bienvenida === ''">Facturas calculadas</a></li>
+                <li ng-class="mCompras"><a href="#/compras" ng-hide="vm.Bienvenida === ''">Compras</a></li>
+                <li ng-class="mFacturasv"><a href="#/comprascompleta" ng-hide="vm.Bienvenida === ''">Compras calculadas</a></li>
+                <li ng-class="mIrpf"><a href="#/irpflista" ng-hide="vm.Bienvenida === ''">Decl. IRPF</a></li>
+
+                <!--<li ng-class="mConsultas"><a href="#/consultas" ng-hide="vm.Bienvenida === ''">Ver consultas</a></li>-->
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="mUsuarios"><a href="#/usuario/{{globales.loginUsuario.UsuarioID}}" ng-hide="vm.Bienvenida === ''">Perfil de usuario</a></li>
+                <li ng-class="mLogout"><a href="#/" ng-hide="vm.Bienvenida === ''">Cerrar sesión</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+

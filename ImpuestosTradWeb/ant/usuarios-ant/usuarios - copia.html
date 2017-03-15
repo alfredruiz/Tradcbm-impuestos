@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="Cal2ProU" ng-controller="CalPro_Usuarios_Controller as vm">
+    <head>
+        <meta charset="utf-8">
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+        <title>Formularios</title>
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/jcs-auto-validate.js"></script>
+
+        <!-- Librerias propias para angular -->
+        <script src="js/appg.js"></script>
+</head>
+<body>
+    <div class="container no-top">
+        
+        <table class="table table-striped">
+            <caption>Usuarios</caption>
+            <thead>
+                <tr>
+                    <th>Usuario ID</th>
+                    <th>Nombre de usuario</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr class="form-online" ng-repeat="usu in vm.usuarios">
+                    <td>
+                        <span>{{usu.UsuarioID}}</span>
+                    </td>
+                    <td>
+                       <span>{{usu.NombreUsuario}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+        Bienvenido, {{vm.usuarios[0].NombreUsuario}}        
+        </div>
+
+
+        <div class="container">
+            <button ng-click="vm.ListarUsuarios()">Listar usuarios</button>
+            <div id="resultado" ng-repeat="usu in vm.usuarios" ng-hide="resultado">
+                {{usu.NombreUsuario}}
+            </div>
+        </div>
+
+    </div>
+
+    
+</body>
+</html>

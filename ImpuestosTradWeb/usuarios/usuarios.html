@@ -1,0 +1,38 @@
+﻿<h1>VER USUARIOS</h1>
+<!--CONTENEDOR-->
+<div class="container ">
+
+    <table class="table table-striped">
+        <caption>Usuarios</caption>
+        <thead>
+            <tr>
+                <th>Usuario ID</th>
+                <th>Nombre</th>
+                <th>correo</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="form-online" ng-repeat="usu in vm.usuarios">
+
+                <td><span>{{usu.UsuarioID}}</span></td>
+                <td><span>{{usu.NombreUsuario}}</span></td>
+                <td><span>{{usu.CorreoElectronico}}</span></td>                
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<!--FIN CONTENEDOR-->
+
+
+
+
+        <div>
+            Bienvenido, {{vm.usuarios[0].NombreUsuario}}
+        </div>
+
+
+        
+    <pre>
+    {{vm.usuarios}}   
+</pre>

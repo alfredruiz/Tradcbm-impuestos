@@ -1,0 +1,108 @@
+﻿
+<h1>
+    <i class="fa fa-ticket"></i> CONSULTAS DE FACTURAS
+</h1>
+<br />
+
+
+<!--<h4>Hola, {{vm.getLoginUsuario()}}</h4>-->
+<!--CONTENEDOR-->
+<div class="container ">
+
+    <!-- TABLA DE RESULTADOS -->
+    <table class="table table-striped">
+       
+        <thead>
+            <tr class="bg-primary">
+                <th><a href="#/factura/0" class="btn btn-info"><i class="fa fa-plus"></i></a></th>
+                <th>ID Factura</th>
+                <th>Num. Factura</th>
+
+                <!--Código para ordenar resultados-->
+
+                <th ng-click="vm.sort('vm.CodCliente')">Cód. Cliente
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='CodCliente'" 
+                          ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}">
+                    </span>
+                </th>
+
+                <th ng-click="vm.sort('vm.Ambito')" >Ámbito
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='vm.Ambito'" 
+                          ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}">
+
+                    </span>
+                </th>
+
+                <th >Fecha</th>
+                <th >Base factura</th>
+                <th>Tipo dto.</th>
+
+                <th>Tipo IVA</th>
+
+                <th>Base IRPF</th>
+
+
+            </tr>
+        </thead>
+
+        <!-- FILTROS -->
+        <thead>
+            <tr class="bg-info">
+                <th>Filtros</th>
+                <th></th>
+                <th></th>
+                <th><input type="text" ng-model="search.cliente" class="col-xs-6 col-sm-6 col-md-6" /></th>
+                <th><input type="text" ng-model="search.ambito" class="col-xs-6 col-sm-6 col-md-6" /></th>
+                <th><input type="text" ng-model="search.fecha" class="col-xs-6 col-sm-6 col-md-6" /></th>
+                <th></th>
+                <th><input type="text" ng-model="search.dto" class="col-xs-6 col-sm-6 col-md-6" /></th>
+                <th><input type="text" ng-model="search.iva" class="col-xs-6 col-sm-6 col-md-6" /></th>
+                <th><input type="text" ng-model="search.irpf" class="col-xs-6 col-sm-6 col-md-6" /></th>
+                <th></th>
+                <th></th>
+
+            </tr>
+        </thead>
+        
+        <tbody>
+
+            <!-- 
+                dir-paginate sustituye a ng-repeat y aquí se espeficifican filtros y orden
+                orderBy ordena de acuerdo con una función en el controlador
+                filter filtra de acuerdo con al formulario de búsqueda de más arriba
+                intemPerPage indica cuantos registros se verán por página
+            -->
+
+            <tr class="form-online" 
+                dir-paginate="fac in vm.facturasTodas | 
+                orderBy:vm.sortkey:vm.reverse | 
+                filter:{CodCliente:search.cliente, Ambito:search.ambito, Fecha:search.fecha, Descuento:search.dto, 
+                TipoIVA:search.iva, TipoIRPF:search.irpf} | 
+                itemsPerPage:5"> 
+                <td><a href="#/factura/{{fac.IDFacturaProv}}" class="btn btn-success"><i class="fa fa-pencil"></i></a></td>
+
+                <td><span>{{fac.IDFacturaProv}}</span></td>
+                <td><span>{{fac.NumFactura}}</span></td>
+                <td><span>{{fac.CodCliente}}</span></td>
+                <td><span>{{fac.Ambito}}</span></td>
+                <td><span>{{fac.Fecha}}</span></td>
+                <td><span>{{fac.Base}}</span></td>
+                <td><span>{{fac.Descuento}}</span></td>
+                <td><span>{{fac.TipoIVA}}</span></td>
+                <td><span>{{fac.TipoIRPF}}</span></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="text-right">
+        <!-- BOTONES PARA PASAR PÁGINA -->
+        <dir-pagination-controls max-size="10"
+                                 direction-links="true"
+                                 boundary-links="true">
+        </dir-pagination-controls>
+    </div>
+
+</div>
+

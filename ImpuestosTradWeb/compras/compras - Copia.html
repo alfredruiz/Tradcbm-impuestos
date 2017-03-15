@@ -1,0 +1,74 @@
+﻿
+<h1>
+    <i class="fa fa-shopping-cart"></i> CONSULTAS DE COMPRAS
+</h1>
+<br />
+
+
+<!--<h4>Hola, {{vm.getLoginUsuario()}}</h4>-->
+<!--CONTENEDOR-->
+<div class="container ">
+    <!--<div class="large-12 columns">
+        <label>Filtra tu búsqueda: </label>
+        <input type="text" ng-model="buscador" />
+    </div>-->
+
+    <div>
+        <div>
+            <button class="btn btn-primary" ng-click="vm.PrimPag()"><i class="fa fa-fast-backward"></i> Primera</button>
+            <button class="btn btn-info" ng-click="vm.AntPag()"><i class="fa fa-backward"></i> Anterior</button>
+            <label>pagina {{vm.VerPaginaActual()}} de {{vm.verTotalPaginas()}}</label>
+            <button class="btn btn-info " ng-click="vm.SigPag()">Siguiente <i class="fa fa-forward"></i></button>
+            <button class="btn btn-primary" ng-click="vm.UltPag()">Última <i class="fa fa-fast-backward"></i></button>
+        </div>
+        <br />
+
+        <div class="cargando" ng-show="vm.cargando"><img src="../img/carga.gif" />CARGANDO...</div>
+    </div>
+
+    <table class="table table-striped">
+       
+        <thead>
+            <tr>
+                <th><a href="#/compra/0" class="btn btn-info"><i class="fa fa-fast-plus"></i> Añadir</a></th>
+                <!--<th>ID compra</th>-->
+                <th>proveedor</th>
+                <th>Num. Factura</th>
+                <th>concepto</th>
+                <th>fecha</th>
+                <th>base factura</th>
+                <th>Tipo IVA</th>
+                <th>amortización</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="form-online" ng-repeat="com in vm.compras |filter:buscador">
+                <td><a href="#/compra/{{com.IDCompras}}" class="btn btn-success">ver</a></td>
+
+                <!--<td><span>{{com.IDCompras}}</span></td>-->
+                <td><span>{{com.RazonSocial}}</span></td>
+                <td><span>{{com.NumFactura}}</span></td>
+                <td><span>{{com.Concepto}}</span></td>
+                <td><span>{{com.Fecha}}</span></td>
+                <td><span>{{com.BaseFactura}}</span></td>
+                <td><span>{{com.TipoIva}}</span></td>
+                <td><span>{{com.Amortizacion}}</span></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+    <!--<pre>
+    {{vm.getLoginUsuario()}}
+    </pre>-->
+</div>
+<!--FIN CONTENEDOR-->
+    
+<!--FIN CONTENEDOR-->

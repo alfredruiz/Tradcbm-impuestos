@@ -1,0 +1,95 @@
+﻿
+
+<script>
+    var date = $('#datepicker').datepicker({ dateFormat: 'yyyy-mm-dd' }).val();
+</script>
+
+<div ng-include="submenu"></div>
+
+    <div class="row"  >
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <h1 ><i class="fa fa-eur"></i> {{vm.titulo}}</h1>
+                <hr>
+            </div>
+        </div>
+        <form>
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <table  class="table table-striped" >
+                        <!--<tr>
+                            <td class="col-md-3" colspan="1"><h4>ID Factura: {{vm.compra.IDCompras}} </h4> </td>
+
+                        </tr>-->
+                        <tr><td colspan="4"></td></tr>
+
+
+                        <tr class="danger">
+                            <td colspan="4"><B>RELACIÓN DE COMPRAS</B></td>
+                        </tr>
+
+                        <tr><td colspan="4"></td></tr>
+
+                        <tr><td></td></tr>
+
+
+                        <tr><td colspan="4"></td></tr>
+                        <tr >
+                            <td>Proveedor</td>
+                            <td><input name="software" class="form-control text-left" ng-model="vm.compra.RazonSocial" /></td>
+                        </tr>
+                        <tr >
+                            <td>Num. factura</td>
+                            <td><input name="software" class="form-control text-left" ng-model="vm.compra.NumFactura" /></td>
+                        </tr>
+
+                        <tr >
+                            <td>concepto</td>
+                            <td><input name="MaterialConsultaAlta" class="form-control text-left" ng-model="vm.compra.Concepto" /></td>
+                        </tr>
+                        <tr>
+                            <td ng-init="vm.Mostrar()" ng-show="vm.VerModificar" >Fecha</td>
+                            <td ng-init="vm.Mostrar()" ng-show="vm.VerModificar" ><input class="form-control text-left" 
+                                                        ng-click="vm.VerModificar = false; vm.VerAnadir = true; vm.compra.Fecha = ''" ng-model="vm.compra.Fecha" />
+                          
+                        </tr>
+                        <tr >
+                            <td ng-init="vm.Mostrar()" ng-show="vm.VerAnadir" >Fecha</td>
+                            <td ng-init="vm.Mostrar()" ng-show="vm.VerAnadir" ><input  name="InstalTelefonoInternet" class="form-control text-left"  
+                                                        ng-model="vm.compra.Fecha" /></td>
+                        </tr>
+                        <tr >
+                            <td>Base Factura</td>
+                            <td><input type="number" step="any" name="AlquilerOficina" class="form-control text-left" ng-model="vm.compra.BaseFactura" /></td>
+                        </tr>
+                        <tr >
+                            <td>Tipo de IVA</td>
+                            <td><input type="number" step="any" name="MobiliarioOficina" class="form-control text-left" ng-model="vm.compra.TipoIva" /></td>
+                        </tr>
+                        <tr >
+                            <td>Observaciones</td>
+                            <td><input type="number" step="any" name="ImagenProfesional" class="form-control text-left" ng-model="vm.compra.Observaciones" /></td>
+                        </tr>
+                        </table>
+                    <table>
+                        
+                        <!--BOTÓN ENVIAR-->
+                        <tr>
+                            <td ng-init="vm.MostrarBtn()" ng-show="vm.VerBtnAnadir"><button type="submit" class="btn btn-success" ng-click="vm.anadir(vm.compra);vm.compra = ''"><i class="fa fa-floppy-o"> Guardar</i></button></td>
+                            <td ><button type="submit" class="btn btn-primary" ng-click="vm.enviar(vm.compra)"><i class="fa fa-floppy-o"></i> Guardar y volver</button></td>
+                            <td><button type="submit" class="btn btn-danger" ng-click="vm.EliminarCompra(vm.compra.IDCompras)"><i class="fa fa-trash"></i> Eliminar</button></td> 
+                            <td><button type="submit" class="btn btn-warning" ng-click="vm.cancelar()"><i class="fa fa-ban"></i> Cancelar</button></td> 
+                        
+                        </tr>
+                       
+                    </table>
+                    <pre>
+                        {{vm.compra}}
+                    </pre>
+                </div>
+            </div>
+        </form>
+    </div>
+
+       
+

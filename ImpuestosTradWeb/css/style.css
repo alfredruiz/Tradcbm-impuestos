@@ -1,0 +1,42 @@
+body {
+  padding-top: 50px;
+  
+}
+.cuerpo{
+    background-color:lightskyblue;
+}
+
+a.sincolor {
+    color:#000000 !important;
+    text-decoration:none;
+}
+
+.cargando{
+   color:red;
+   font-size:xx-large;
+   
+}
+
+.cargando img{
+    width:2em;
+    height:2em;
+}
+
+div.jumbotron{
+    background-color:dodgerblue !important;
+    color:black !important;
+}
+
+/*.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: blue; // Choose your own color here
+ }*/
+
+.table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: white; // Choose your own color here
+ }
+
+.moneda{
+    text-align:right;
+}

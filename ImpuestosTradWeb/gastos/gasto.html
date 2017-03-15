@@ -1,0 +1,332 @@
+﻿<div ng-include="submenu"></div>
+
+    <div class="row"  >
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <h1 ><i class="fa fa-eur"></i> {{vm.titulo}}</h1>
+                <hr>
+            </div>
+        </div>
+        <form>
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <tr ng-hide="creando">
+                            <td class="col-md-3" colspan="1"><h4>Consulta número: {{vm.gasto.ConsultaID}} </h4> </td>
+                            <td align="right" colspan="3">
+                                <button class="btn btn-primary" ng-click="button1=false;button2=true" ng-show="button1" ng-init="button1=false"><i class="fa fa-eye fa-lg"></i> ver completo</button>
+                                <button class="btn btn-primary" ng-click="button1=true;button2=false" ng-show="button2" ng-init="button2=true"><i class="fa fa-eye fa-lg"></i> ver resumido</button>
+                            </td>
+
+                        </tr>
+                        <tr><td colspan="4"></td></tr>
+
+                        <!-------------------->
+                        <!--GASTOS INICIALES-->
+                        <!-------------------->
+                        <tr class="danger">
+                            <td colspan="4"><B>GASTOS INICIALES</B></td>
+                        </tr>
+
+                        <tr><td colspan="4"></td></tr>
+
+                        <tr><td></td></tr>
+
+                        <tr class="bg-primary">
+                            <td>Concepto</td>
+                            <td>€uros</td>
+                            <td>Años</td>
+                            <td>Anual</td>
+                        </tr>
+
+                        <tr><td colspan="4"></td></tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Gasto en hardware</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.Hardware" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" ng-model="vm.gasto.HardwareY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.Hardware / vm.gasto.HardwareY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Gasto en hardware</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.Software" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" ng-model="vm.gasto.SoftwareY" /></td>
+                            <td><input type="number" step="any" name="softwareS" class="form-control text-left" value="{{vm.gasto.Software / vm.gasto.SoftwareY}}" readonly /></td>
+                        </tr>
+
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Material de consulta</td>
+                            <td><input type="number" step="any" name="MaterialConsultaAlta" class="form-control text-left" ng-model="vm.gasto.MaterialConsultaAlta" /></td>
+                            <td><input type="number" step="any" name="MaterialConsultaAltaY" class="form-control text-left" ng-model="vm.gasto.MaterialConsultaAltaY" /></td>
+                            <td><input type="number" step="any" name="MaterialConsultaAltaS" class="form-control text-left" value="{{vm.gasto.MaterialConsultaAlta / vm.gasto.MaterialConsultaAltaY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Instalación teléfono / internet</td>
+                            <td><input type="number" step="any" name="InstalTelefonoInternet" class="form-control text-left" ng-model="vm.gasto.InstalTelefonoInternet" /></td>
+                            <td><input type="number" step="any" name="InstalTelefonoInternetY" class="form-control text-left" ng-model="vm.gasto.InstalTelefonoInternetY" /></td>
+                            <td><input type="number" step="any" name="InstalTelefonoInternetS" class="form-control text-left" value="{{vm.gasto.InstalTelefonoInternet / vm.gasto.InstalTelefonoInternetY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Alquiler de oficina</td>
+                            <td><input type="number" step="any" name="AlquilerOficina" class="form-control text-left" ng-model="vm.gasto.AlquilerOficina" /></td>
+                            <td><input type="number" step="any" name="AlquilerOficinaY" class="form-control text-left" ng-model="vm.gasto.AlquilerOficinaY" /></td>
+                            <td><input type="number" step="any" name="AlquilerOficinaS" class="form-control text-left" value="{{vm.gasto.AlquilerOficina / vm.gasto.AlquilerOficinaY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Mobiliario de oficina</td>
+                            <td><input type="number" step="any" name="MobiliarioOficina" class="form-control text-left" ng-model="vm.gasto.MobiliarioOficina" /></td>
+                            <td><input type="number" step="any" name="MobiliarioOficinaY" class="form-control text-left" ng-model="vm.gasto.MobiliarioOficinaY" /></td>
+                            <td><input type="number" step="any" name="MobiliarioOficinaS" class="form-control text-left" value="{{vm.gasto.MobiliarioOficina / vm.gasto.MobiliarioOficinaY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Imagen profesional</td>
+                            <td><input type="number" step="any" name="ImagenProfesional" class="form-control text-left" ng-model="vm.gasto.ImagenProfesional" /></td>
+                            <td><input type="number" step="any" name="ImagenProfesionalY" class="form-control text-left" ng-model="vm.gasto.ImagenProfesionalY" /></td>
+                            <td><input type="number" step="any" id="ImagenProfesionalS" class="form-control text-left" value="{{vm.gasto.ImagenProfesional / vm.gasto.ImagenProfesionalY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Gastos varios</td>
+                            <td><input type="number" step="any" name="GastosEstablVarios" class="form-control text-left" ng-model="vm.gasto.GastosEstablVarios" /></td>
+                            <td><input type="number" step="any" name="GastosEstablVariosY" class="form-control text-left" ng-model="vm.gasto.GastosEstablVariosY" /></td>
+                            <td><input type="number" step="any" id="GastosEstablVariosS" class="form-control text-left" value="{{vm.gasto.GastosEstablVarios / vm.gasto.GastosEstablVariosY}}" readonly /></td>
+                        </tr>
+                        <!--TOTALES FORMULARIO-->
+                        <tr><td colspan="4"></td></tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td align="right"><b>Inversión total inicial</b></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" value="{{vm.gasto.Hardware -- vm.gasto.Software -- vm.gasto.MaterialConsultaAlta -- vm.gasto.InstalTelefonoInternet -- vm.gasto.AlquilerOficina -- vm.gasto.MobiliarioOficina -- vm.gasto.ImagenProfesional -- vm.gasto.GastosEstablVarios}}" readonly /></td>
+
+                            <td align="right"><b>Amortización anual</b></td>
+                            <td><input type="number" step="any" class="form-control text-left" value="{{((vm.gasto.Hardware) / (vm.gasto.HardwareY))        + ((vm.gasto.Software) / (vm.gasto.SoftwareY))        + ((vm.gasto.MaterialConsultaAlta) / (vm.gasto.MaterialConsultaAltaY))        + ((vm.gasto.InstalTelefonoInternet) / (vm.gasto.InstalTelefonoInternetY))        + ((vm.gasto.AlquilerOficina) / (vm.gasto.AlquilerOficinaY))        + ((vm.gasto.MobiliarioOficina) / (vm.gasto.MobiliarioOficinaY))        + ((vm.gasto.ImagenProfesional) / (vm.gasto.ImagenProfesionalY))        + ((vm.gasto.GastosEstablVarios) / (vm.gasto.GastosEstablVariosY))}}" readonly /></td>
+                        </tr>
+
+                        <!--TOTALES FORMULARIO RESUMIDO-->
+                        <tr ng-show="button1" ng-init="button1=false">
+                            <td><b>Inversión total inicial</b></td>
+                            <td class="col-md-6"><input type="number" step="any" class="form-control text-left" ng-model="vm.gasto.GastosEstablicimTotal" /></td>
+                            <td></td>
+                        </tr>
+                        <!--BOTÓN ENVIAR-->
+                        <tr>
+                            <td colspan="4"><button type="submit" class="btn btn-primary" ng-click="vm.enviar(gastos)">Guardar cambios</button></td>
+                        </tr>
+
+                        <tr><td colspan="4"><hr /></td></tr>
+
+                        <!------------------>
+                        <!--GASTOS ANUALES-->
+                        <!------------------>
+
+                        <tr class="danger">
+                            <td colspan="4"><B>GASTOS ANUALES</B></td>
+                        </tr>
+                        <tr><td colspan="4"></td></tr>
+
+                        <tr><td></td></tr>
+
+
+                        <tr class="bg-primary">
+                            <td>Concepto</td>
+                            <td>€uros</td>
+                            <td>Años</td>
+                            <td>Anual</td>
+                        </tr>
+                        <tr><td colspan="4"></td></tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Renovación material de consulta</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.MaterialConsultaRenov" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" ng-model="vm.gasto.MaterialConsultaRenovY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.MaterialConsultaRenov / vm.gasto.MaterialConsultaRenovY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Renovación de hardware</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.HardwareRenov" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" ng-model="vm.gasto.HardwareRenovY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.HardwareRenov / vm.gasto.HardwareRenovY}}" readonly /></td>
+                        </tr>
+
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Renovación de software</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.SoftwareRenov" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.SoftwareRenovY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.SoftwareRenov / vm.gasto.SoftwareRenovY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Afiliaciones</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.Afiliaciones" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.AfiliacionesY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.Afiliaciones / vm.gasto.AfiliacionesY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Protección de la inversión</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.Proteccion" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.ProteccionY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.Proteccion / vm.gasto.ProteccionY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Dominio de internet</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.DominioInternet" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.DominioInternetY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.DominioInternet / vm.gasto.DominioInternetY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Material fungible</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.MaterialFungible" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.MaterialFungibleY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.MaterialFungible / vm.gasto.MaterialFungibleY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Formación</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.Formacion" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.FormacionY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.Formacion / vm.gasto.FormacionY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Promoción y publicidad</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.Publicidad" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.PublicidadY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.Publicidad / vm.gasto.PublicidadY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Imprevistos</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.Imprevistos" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.ImprevistosY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.Imprevistos / vm.gasto.ImprevistosY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Prevención de riesgos y enfermedades profesionales</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.PRL" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.PRLY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.PRL / vm.gasto.PRLY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Varios</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.GastosAnualesVarios" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.GastosAnualesVariosY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.GastosAnualesVarios / vm.gasto.GastosAnualesVariosY}}" readonly /></td>
+                        </tr>
+
+                        <!--TOTALES FORMULARIO-->
+                        <tr><td colspan="4"></td></tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td><b>Total mensual</b></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" value="{{vm.gasto.MaterialConsultaRenov -- vm.gasto.HardwareRenov -- vm.gasto.SoftwareRenov -- vm.gasto.Afiliaciones-- vm.gasto.Proteccion-- vm.gasto.DominioInternet-- vm.gasto.MaterialFungible-- vm.gasto.Formacion-- vm.gasto.Publicidad-- vm.gasto.Imprevistos-- vm.gasto.PRL-- vm.gasto.GastosAnualesVarios}}" readonly /></td>
+
+                            <td align="right"><b>Total anual</b></td>
+                            <td><input type="number" step="any" class="form-control text-left" value="{{((vm.gasto.MaterialConsultaRenov) / (vm.gasto.MaterialConsultaRenov))+((vm.gasto.HardwareRenov) / (vm.gasto.HardwareRenov))+((vm.gasto.SoftwareRenov) / (vm.gasto.SoftwareRenov))+((vm.gasto.Afiliaciones) / (vm.gasto.Afiliaciones))+((vm.gasto.Proteccion) / (vm.gasto.Proteccion))+((vm.gasto.DominioInternet) / (vm.gasto.DominioInternet))        +((vm.gasto.MaterialFungible) / (vm.gasto.MaterialFungible))        +((vm.gasto.Formacion) / (vm.gasto.Formacion))        +((vm.gasto.Publicidad) / (vm.gasto.Publicidad))        +((vm.gasto.Imprevistos) / (vm.gasto.Imprevistos))        +((vm.gasto.PRL) / (vm.gasto.PRL))        +((vm.gasto.GastosAnualesVarios) / (vm.gasto. GastosAnualesVarios))}}" readonly /></td>
+                        </tr>
+                        <!--TOTALES FORMULARIO RESUMIDO-->
+                        <tr ng-show="button1" ng-init="button1=false">
+                            <td><b>Total mensual</b></td>
+                            <td class="col-md-6"><input type="number" step="any" class="form-control text-left" ng-model="vm.gasto.GastosAnualesTotal" /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><button type="submit" class="btn btn-primary" ng-click="vm.enviar(GastosID)">Guardar cambios</button></td>
+                        </tr>
+
+                        <tr><td colspan="4"><hr /></td></tr>
+
+                        <!------------------>
+                        <!--GASTOS ANUALES-->
+                        <!------------------>
+
+                        <tr class="danger">
+                            <td colspan="4"><B>GASTOS MENSUALES</B></td>
+                        </tr>
+                        <tr><td colspan="4"></td></tr>
+                        <tr><td></td></tr>
+
+
+                        <tr class="bg-primary">
+                            <td>Concepto</td>
+                            <td>€uros</td>
+                            <td>Años</td>
+                            <td>Anual</td>
+                        </tr>
+                        <tr><td colspan="4"></td></tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Alquiler mensual de oficina</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.AlquilerOficinaMensual" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" ng-model="vm.gasto.AlquilerOficinaMensualY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.AlquilerOficinaMensual / vm.gasto.AlquilerOficinaMensualY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Seguridad Social</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.SeguridadSocial" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" ng-model="vm.gasto.SeguridadSocialY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.SeguridadSocial / vm.gasto.SeguridadSocialY}}" readonly /></td>
+                        </tr>
+
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Seguros médicos</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.SeguroMedico" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.SeguroMedicoY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.SeguroMedico / vm.gasto.SeguroMedicoY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Luz y calefacción</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.LuzCalefaccion" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.LuzCalefaccionY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.LuzCalefaccion / vm.gasto.LuzCalefaccionY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Gastos de gestoría y litigios legales</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.GestoriaLitigios" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.GestoriaLitigiosY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.GestoriaLitigios / vm.gasto.GestoriaLitigiosY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Asesoría en avarías informáticas</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.AsesoriaAveriasInf" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.AsesoriaAveriasInfY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.AsesoriaAveriasInf / vm.gasto.AsesoriaAveriasInfY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Alojamiento web</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.AlojamientoWeb" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.AlojamientoWebY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.AlojamientoWeb / vm.gasto.AlojamientoWebY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Teléfono e internet mensuales</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.TelefonoInternetMensual" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.TelefonoInternetMensualY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.TelefonoInternetMensual / vm.gasto.TelefonoInternetMensualY}}" readonly /></td>
+                        </tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td>Gastos mensuales varios</td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.GastosMensualesVarios" /></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" ng-model="vm.gasto.GastosMensualesVariosY" /></td>
+                            <td><input type="number" step="any" name="softwareY" class="form-control text-left" value="{{vm.gasto.GastosMensualesVarios / vm.gasto.GastosMensualesVariosY}}" readonly /></td>
+                        </tr>
+                        
+
+                        <!--TOTALES FORMULARIO-->
+                        <tr><td colspan="4"></td></tr>
+                        <tr ng-show="button2" ng-init="button2=true">
+                            <td><b>Total mensual</b></td>
+                            <td><input type="number" step="any" name="software" class="form-control text-left" value="{{vm.gasto.AlquilerOficinaMensual-- vm.gasto.SeguridadSocial-- vm.gasto.SeguroMedico-- vm.gasto.LuzCalefaccion-- vm.gasto.GestoriaLitigios-- vm.gasto.AsesoriaAveriasInf-- vm.gasto.AlojamientoWeb-- vm.gasto.TelefonoInternetMensual-- vm.gasto.GastosMensualesVarios}}" readonly /></td>
+
+                            <td align="right"><b>Total anual</b></td>
+                            <td><input type="number" step="any" class="form-control text-left" value="{{((vm.gasto.AlquilerOficinaMensual ) /(vm.gasto.AlquilerOficinaMensualY)) + ((vm.gasto.SeguridadSocial )/(vm.gasto.SeguridadSocialY)) + ((vm.gasto.SeguroMedico ) /(vm.gasto.SeguroMedicoY)) + ((vm.gasto.LuzCalefaccion ) /(vm.gasto.LuzCalefaccionY)) + ((vm.gasto.GestoriaLitigios ) /(vm.gasto.GestoriaLitigiosY)) + ((vm.gasto.AsesoriaAveriasInf ) /(vm.gasto.AsesoriaAveriasInfY)) + ((vm.gasto.AlojamientoWeb ) /(vm.gasto.AlojamientoWebY)) + ((vm.gasto.TelefonoInternetMensual ) /(vm.gasto.TelefonoInternetMensualY)) + ((vm.gasto.GastosMensualesVarios ) /(vm.gasto.GastosMensualesVariosY))}}" readonly /></td>
+
+                        </tr>
+
+                        <!--TOTALES FORMULARIO RESUMIDO-->
+                        <tr ng-show="button1" ng-init="button1=false">
+                            <td><b>Total mensual</b></td>
+                            <td class="col-md-6"><input type="number" step="any" class="form-control text-left" ng-model="vm.gasto.GastosMensualesTotal" /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><button type="submit" class="btn btn-primary" ng-click="vm.enviar(GastosID)">Guardar cambios</button></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+
+       
+

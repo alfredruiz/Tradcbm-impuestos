@@ -1,0 +1,75 @@
+﻿<div ng-include="submenu"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <h1><i class="fa fa-clock-o"></i> {{vm.titulo}}</h1>
+            <hr>
+        </div>
+    </div>
+    <form>
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <tr ng-hide="creando">
+                        <td class="col-md-4" colspan="4"><h4>Consulta número: {{vm.horastrabajadas.ConsultaID}} </h4> </td>
+                    </tr>
+                    <tr><td colspan="4"></td></tr>
+
+                    <tr><td></td></tr>
+
+                    <tr class="bg-primary">
+                        <td>Concepto</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Dias de vacaciones al año</td>
+                        <td><input type="number" step="any" class="form-control text-left" ng-model="vm.horastrabajadas.DiasVacacionesAnio" /></td>
+                    </tr>
+                    <tr>
+                        <td>DIas festivos al año</td>
+                        <td><input type="number" step="any" class="form-control text-left" ng-model="vm.horastrabajadas.DiasFestivosAnio" /></td>
+                    </tr>
+                    <tr>
+                        <td>Días de trabajo a la semana</td>
+                        <td><input type="number" step="any" class="form-control text-left" ng-model="vm.horastrabajadas.DiasTrabajoSemana" /></td>
+                    </tr>
+                    <tr>
+                        <td>DIas de formación al año</td>
+                        <td><input type="number" step="any" class="form-control text-left" ng-model="vm.horastrabajadas.DiasFormacionAnio" /></td>
+                    </tr>
+                    <tr>
+                        <td>Dias dedicados a administración anuales</td>
+                        <td><input type="number" step="any" class="form-control text-left" ng-model="vm.horastrabajadas.DiasAdmAnio" /></td>
+                    </tr>
+                    <tr>
+                        <td>Horas diarias de trabajo productivo</td>
+                        <td><input type="number" step="any" class="form-control text-left" ng-model="vm.horastrabajadas.HorasDiariasTrabajo" /></td>
+                    </tr>
+                    <tr>
+                        <td>Horas diarias de trabajo no productivo</td>
+                        <td><input type="number" step="any" class="form-control text-left" ng-model="vm.horastrabajadas.HorasDiariasTrabNoProd" /></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+
+            <!--BOTÓN-->
+            <div class="col-md-4 col-sm-4 col-xs-2">
+                <button type="submit" class="btn btn-primary" ng-click="vm.enviar(horastrabajadasID)">Guardar cambios</button>
+                <!--<button type="submit" class="btn btn-danger" ng-click="vm.EliminarHorasTrabajadas(vm.horastrabajadas.horastrabajadasID)">Eliminar</button>-->
+
+                <br />
+                <br />
+            </div>
+            <!--<a class="text-success" ng-show="actualizado">Gasto actualizado</a>--><!--ng-show no funciona de momento-->
+        </div>
+    </form>
+
+
+</div>
+
+
